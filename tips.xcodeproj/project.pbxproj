@@ -12,6 +12,7 @@
 		455254351B8A395000F841CD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 455254331B8A395000F841CD /* Main.storyboard */; };
 		455254371B8A395000F841CD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 455254361B8A395000F841CD /* Assets.xcassets */; };
 		4552543A1B8A395000F841CD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 455254381B8A395000F841CD /* LaunchScreen.storyboard */; };
+		455254421B8C365B00F841CD /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 455254411B8C365B00F841CD /* SettingsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +23,7 @@
 		455254361B8A395000F841CD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		455254391B8A395000F841CD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4552543B1B8A395000F841CD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		455254411B8C365B00F841CD /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +58,7 @@
 			children = (
 				4552542F1B8A395000F841CD /* AppDelegate.swift */,
 				455254311B8A395000F841CD /* ViewController.swift */,
+				455254411B8C365B00F841CD /* SettingsViewController.swift */,
 				455254331B8A395000F841CD /* Main.storyboard */,
 				455254361B8A395000F841CD /* Assets.xcassets */,
 				455254381B8A395000F841CD /* LaunchScreen.storyboard */,
@@ -136,6 +139,7 @@
 			files = (
 				455254321B8A395000F841CD /* ViewController.swift in Sources */,
 				455254301B8A395000F841CD /* AppDelegate.swift in Sources */,
+				455254421B8C365B00F841CD /* SettingsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -247,6 +251,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = tips/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.nerdmonkey.tips;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -258,6 +263,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = tips/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.nerdmonkey.tips;
 				PRODUCT_NAME = "$(TARGET_NAME)";
