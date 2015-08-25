@@ -15,11 +15,18 @@ class ViewController: UIViewController {
     @IBOutlet weak var tipLabel: UILabel!
     @IBOutlet weak var totalLabel: UILabel!
     
+    let tipSettingsKey = "tipControl.selectedSegmentIndex"
+    let billFieldSettingsKey = "lastBillField"
+    let defaults = NSUserDefaults.standardUserDefaults()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         tipLabel.text = "$0.00"
         totalLabel.text = "$0.00"
+        
+        loadDefaults()
+        onEditingChanged(1)
     }
 
     override func didReceiveMemoryWarning() {
@@ -28,16 +35,29 @@ class ViewController: UIViewController {
     }
 
     @IBAction func onEditingChanged(sender: AnyObject) {
-        var tipPercentages = [0.18, 0.2, 0.25]
-        var tipPercentage = tipPercentages[tipControl.selectedSegmentIndex]
+        let tipPercentages = [0.18, 0.2, 0.25]
+        let tipPercentage = tipPercentages[tipControl.selectedSegmentIndex]
         
-        var billAmount = NSString(string: billField.text!).doubleValue
-        var tip = billAmount * tipPercentage
-        var total = billAmount + tip
+        let billAmount = NSString(string: billField.text!).doubleValue
+        let tip = billAmount * tipPercentage
+        let total = billAmount + tip
         tipLabel.text = String(format: "$%.2f", tip)
         totalLabel.text = String(format: "$%.2f", total)
+        
+        saveDefaults()
     }
 
+    func loadDefaults() {
+        tipControl.selectedSegmentIndex = defaults.integerForKey(tipSettingsKey)
+        billField.text = defaults.stringForKey(billFieldSettingsKey)
+    }
+    
+    func saveDefaults() {
+        defaults.setInteger(tipControl.selectedSegmentIndex, forKey: tipSettingsKey)
+        defaults.setObject(billField.text!, forKey: billFieldSettingsKey)
+        defaults.synchronize()
+    }
+    
     @IBAction func onTap(sender: AnyObject) {
         view.endEditing(true)
     }
